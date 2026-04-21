@@ -259,17 +259,3 @@ docker run -d -p 80:80 --name portfolio portfolio-website
 2. **附件大小**: 附件以 Data URL 格式存储,建议单个文件不超过 2MB
 3. **浏览器兼容**: 推荐使用现代浏览器(Chrome、Firefox、Safari、Edge)
 4. **数据备份**: 建议定期导出数据备份(首页"导出数据"功能)
-
-## 📄 许可证
-
-MIT License
-
-## 👤 作者
-
-张同学
-
----
-
-**在线演示**: http://1.116.121.43/
-
-**GitHub**: https://github.com/Magnolia-jiayi/Personal-digital-business-card
