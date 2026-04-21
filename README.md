@@ -1,2 +1,3 @@
-# profile_by-Codebuddy
-由codebuddy实现的profile网页
+# Personal Digital Business Card
+
+Documentation: [docs/README.md](docs/README.md)
