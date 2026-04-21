@@ -1,0 +1,208 @@
+/* 小红书红色配色方案 */
+:root {
+  /* 主色调 */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  
+  /* 小红书红色 */
+  --color-accent-red: #FE2C55;
+  --color-accent-red-light: #FF4E78;
+  --color-accent-red-dark: #E51E48;
+  
+  /* 中性色 */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+  
+  body {
+    @apply bg-[#FFFFFF] text-[#333333] antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* 应用主题变量 */
+  .bg-primary-500 {
+    background-color: var(--color-accent-red);
+  }
+  
+  .bg-primary-600 {
+    background-color: var(--color-accent-red-dark);
+  }
+  
+  .bg-primary-100 {
+    background-color: rgba(254, 44, 85, 0.1);
+  }
+  
+  .bg-primary-50 {
+    background-color: rgba(254, 44, 85, 0.05);
+  }
+  
+  .text-primary-600 {
+    color: var(--color-accent-red);
+  }
+  
+  .text-primary-700 {
+    color: var(--color-accent-red-dark);
+  }
+  
+  .border-primary-200 {
+    border-color: rgba(254, 44, 85, 0.2);
+  }
+  
+  /* 强调色 */
+  .bg-secondary-500 {
+    background-color: var(--color-accent-red-light);
+  }
+  
+  .text-secondary-600 {
+    color: var(--color-accent-red-light);
+  }
+  
+  /* 中性色 */
+  .text-neutral-900 {
+    color: var(--color-text-primary);
+  }
+  
+  .text-neutral-600 {
+    color: var(--color-text-secondary);
+  }
+  
+  .text-neutral-500 {
+    color: var(--color-text-muted);
+  }
+  
+  .text-neutral-400 {
+    color: var(--color-text-muted);
+  }
+  
+  .bg-neutral-100 {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .bg-neutral-50 {
+    background-color: rgba(245, 245, 245, 0.5);
+  }
+  
+  .border-neutral-100 {
+    border-color: var(--color-bg-secondary);
+  }
+  
+  /* 全局动画 */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  /* 卡片悬停效果 */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 按钮动画 */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+    z-index: -1;
+  }
+  
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  /* 小红书风格动画 */
+  @keyframes soft-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px var(--color-accent-red);
+    }
+    50% {
+      box-shadow: 0 0 10px var(--color-accent-red);
+    }
+  }
+
+  .soft-neon-button {
+    animation: soft-glow 3s ease-in-out infinite;
+  }
+
+  /* 渐变边框 */
+  .soft-neon-border {
+    border: 2px solid var(--color-bg-secondary);
+    transition: all 0.3s ease;
+  }
+
+  .soft-neon-border:hover {
+    border-color: var(--color-accent-red);
+    box-shadow: 0 0 10px rgba(254, 44, 85, 0.3);
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-primary) 50%, var(--color-neutral-dark));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* 导航栏滚动效果 */
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 动画关键帧 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
